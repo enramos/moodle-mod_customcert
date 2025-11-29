@@ -81,6 +81,8 @@ class email_certificate implements \renderable, \templatable {
         $this->coursefullname = $coursefullname;
         $this->certificatename = $certificatename;
         $this->cmid = $cmid;
+        $this->city = $city; // 🔥 Nuevo campo CITY/DELEGACION
+
     }
 
     /**
@@ -98,6 +100,7 @@ class email_certificate implements \renderable, \templatable {
         $info->certificatename = $this->certificatename;
         $info->courseshortname = $this->courseshortname;
         $info->coursefullname = $this->coursefullname;
+        $info->city = $this->city;   // 🔥 Nuevo campo CITY/DELEGACION
 
         if ($this->isstudent) {
             $data->emailgreeting = get_string('emailstudentgreeting', 'customcert', $this->userfullname);
